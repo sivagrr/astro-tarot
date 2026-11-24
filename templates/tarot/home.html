@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <span class="eyebrow-star">◌</span> A SPACE TO LOOK WITHIN</span>
+        <h1>Find meaning in <em>the cards</em> and the stars.</h1>
+        <p>Explore tarot and astrology as tools for reflection. Learn at your own pace, follow your curiosity, and discover a little more about yourself along the way.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="{% url 'reading' %}">Begin a reading <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link light" href="{% url 'astrology' %}">Explore astrology <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="hero-note">
+          <span class="hero-note-icon">◌</span> Open to everyone · No account needed</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg class="hero-orb" viewBox="0 0 560 560" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="orb-fill" cx="38%" cy="28%" r="75%">
+              <stop offset="0" stop-color="#725487"/>
+              <stop offset="0.5" stop-color="#3B2853"/>
+              <stop offset="1" stop-color="#180C25"/>
+            </radialGradient>
+            <linearGradient id="orb-gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFF2CD"/>
+              <stop offset="0.55" stop-color="#EFD18C"/>
+              <stop offset="1" stop-color="#AB7E49"/>
+            </linearGradient>
+            <radialGradient id="orb-halo">
+              <stop offset="0" stop-color="#C084FC" stop-opacity=".22"/>
+              <stop offset="1" stop-color="#C084FC" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="280" cy="280" r="260" fill="url(#orb-halo)"/>
+          <g class="orb-rings" fill="none" stroke="#B997D2" stroke-width="1.2" opacity=".42">
+            <circle cx="280" cy="280" r="245"/>
+            <circle cx="280" cy="280" r="224" stroke-dasharray="2 13"/>
+            <ellipse cx="280" cy="280" rx="250" ry="102" transform="rotate(-28 280 280)"/>
+            <ellipse cx="280" cy="280" rx="250" ry="102" transform="rotate(28 280 280)"/>
+          </g>
+          <g class="orb-float">
+            <circle cx="280" cy="280" r="181" fill="url(#orb-fill)" stroke="url(#orb-gold)" stroke-width="2"/>
+            <circle cx="280" cy="280" r="166" fill="none" stroke="#EFD18C" stroke-opacity=".45"/>
+            <circle cx="280" cy="280" r="150" fill="none" stroke="#DEC0F8" stroke-opacity=".17"/>
+            <path d="M307 155a104 104 0 1 0 111 156 117 117 0 0 1-111-156Z" fill="#EFD18C" opacity=".9"/>
+            <path d="M157 360c50-42 82-40 123-5 40-44 80-42 123 2" fill="none" stroke="#EFD18C" stroke-width="2" opacity=".75"/>
+            <path d="M170 384c41-31 77-28 110-6 39-31 72-28 110 4" fill="none" stroke="#DEC0F8" stroke-width="1.5" opacity=".55"/>
+            <path d="M190 413h180M208 426h144" stroke="#EFD18C" stroke-width="1" opacity=".35"/>
+            <path d="M218 144c-20 9-36 24-48 43M386 349c-7 20-19 37-34 51" fill="none" stroke="#FFF2CD" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+          </g>
+          <g fill="none" stroke="url(#orb-gold)" stroke-width="2" opacity=".8">
+            <path d="M259 479h42l14 19h-70z"/>
+            <path d="M223 506h114M204 520h152" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-bottom shell">
+      <span>SCROLL TO EXPLORE</span>
+      <span>TRUST YOUR CURIOSITY</span>
+    </div>
+  </section>
+  <section class="intro section">
+    <div class="shell">
+      <div class="section-heading centered">
+        <span class="eyebrow dark">EXPLORE YOUR WAY</span>
+        <h2>Two paths, one journey inward.</h2>
+        <p>Ancient traditions, fresh perspectives. Start wherever you feel drawn.</p>
+      </div>
+      <div class="path-grid">
+        <a href="{% url 'cards' %}" class="path-card path-tarot">
+          <span class="path-icon">✦</span>
+          <span class="path-number">01 / TAROT</span>
+          <h3>Listen to the cards.</h3>
+          <p>Get to know all 78 cards, explore their symbols, and find a spread that helps you ask a better question.</p>
+          <span class="card-link">Explore tarot <span aria-hidden="true">↗</span>
+          </span>
+        </a>
+        <a href="{% url 'astrology' %}" class="path-card path-astro">
+          <span class="path-icon">☾</span>
+          <span class="path-number">02 / ASTROLOGY</span>
+          <h3>Look to the stars.</h3>
+          <p>Discover the zodiac's elements, qualities, and archetypes in a clear, grounded guide for beginners.</p>
+          <span class="card-link">Explore astrology <span aria-hidden="true">↗</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="feature section">
+    <div class="shell feature-grid">
+      <div class="feature-visual" aria-hidden="true">
+        <span class="feature-ring">
+        </span>
+        <span class="feature-symbol">☼</span>
+        <span class="feature-small one">✦</span>
+        <span class="feature-small two">☾</span>
+        <span class="feature-small three">✧</span>
+      </div>
+      <div class="feature-copy">
+        <span class="eyebrow dark">A MOMENT FOR YOURSELF</span>
+        <h2>Pull a card. Find a new perspective.</h2>
+        <p>You don't need to know the cards by heart. Choose a spread, draw your cards, and reflect on what their stories bring up for you.</p>
+        <ul class="check-list">
+          <li>Choose from three thoughtful spreads</li>
+          <li>Reveal unique cards from the full deck</li>
+          <li>Save your reading on this device</li>
+        </ul>
+        <a class="button button-dark" href="{% url 'reading' %}">Try an interactive reading <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="quote-section">
+    <div class="shell">
+      <span>✳</span>
+      <blockquote>“The most beautiful thing we can experience is the mysterious.”</blockquote>
+      <cite>— Albert Einstein</cite>
+    </div>
+  </section>
+{% endblock %}

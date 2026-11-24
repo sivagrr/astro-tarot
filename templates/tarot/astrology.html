@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Astrology guide{% endblock %}
+{% block content %}
+    <section class="page-hero astro-hero">
+        <div class="shell">
+            <span class="eyebrow dark">A BEGINNER'S GUIDE TO THE SKY</span>
+            <h1>Get to know <em>the zodiac.</em>
+            </h1>
+            <p>Astrology offers a symbolic language for exploring personality and possibility. Start with the twelve signs, their elements, and their ways of moving through the world.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="shell">
+            <div class="section-heading">
+                <span class="eyebrow dark">THE TWELVE SIGNS</span>
+                <h2>Find your place in the circle.</h2>
+            </div>
+            <div class="zodiac-grid">
+                {% for sign in signs %}
+                    <article class="zodiac-card">
+                        <span class="zodiac-symbol">{{ sign.1 }}</span>
+                        <span class="small-label">{{ sign.4 }}</span>
+                        <h3>{{ sign.0 }}</h3>
+                        <div class="zodiac-tags">
+                            <span>{{ sign.2 }}</span>
+                            <span>{{ sign.3 }}</span>
+                        </div>
+                        <p>{{ sign.5 }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="element-section section">
+        <div class="shell">
+            <div class="section-heading centered">
+                <span class="eyebrow dark">THE FOUR ELEMENTS</span>
+                <h2>Four ways of experiencing life.</h2>
+            </div>
+            <div class="element-grid">
+                <div>
+                    <span>△</span>
+                    <h3>Fire</h3>
+                    <p>Energy, courage, and the spark to begin.</p>
+                </div>
+                <div>
+                    <span>▽</span>
+                    <h3>Earth</h3>
+                    <p>Care, consistency, and tangible growth.</p>
+                </div>
+                <div>
+                    <span>◌</span>
+                    <h3>Air</h3>
+                    <p>Ideas, perspective, and connection.</p>
+                </div>
+                <div>
+                    <span>≈</span>
+                    <h3>Water</h3>
+                    <p>Feeling, intuition, and inner depth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

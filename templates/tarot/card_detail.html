@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ card.name }}{% endblock %}
+{% block content %}
+    <section class="page-hero detail-hero">
+        <div class="shell">
+            <a class="back-link" href="{% url 'cards' %}">← All cards</a>
+            <div class="detail-grid">
+                <div class="detail-card-art">
+                    <img src="{% static card.image %}" alt="{{ card.name }} tarot card" loading="eager">
+                </div>
+                <div class="detail-copy">
+                    <span class="eyebrow dark">{{ card.group }} · {{ card.number }}</span>
+                    <h1>{{ card.name }}</h1>
+                    <span class="keyword-chip">✧ {{ card.keyword }}</span>
+                    <h2>What this card may bring up</h2>
+                    <p>{{ card.meaning }}</p>
+                    <div class="reflection-box">
+                        <span class="small-label">A QUESTION TO SIT WITH</span>
+                        <p>{{ card.reflection }}</p>
+                    </div>
+                    <a class="button button-dark" href="{% url 'reading' %}">Explore in a reading ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

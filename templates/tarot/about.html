@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Our story{% endblock %}
+{% block content %}
+    <section class="page-hero">
+        <div class="shell">
+            <span class="eyebrow dark">WHY WE'RE HERE</span>
+            <h1>Curiosity belongs <em>to everyone.</em>
+            </h1>
+            <p>Astro Tarot is a free, welcoming learning space for people exploring tarot and astrology, whether this is your first visit or a familiar practice.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="shell about-grid">
+            <div>
+                <span class="eyebrow dark">OUR APPROACH</span>
+                <h2>Insight grows through reflection.</h2>
+            </div>
+            <div>
+                <p>We treat cards and celestial archetypes as prompts for thought, conversation, and self-understanding. There is no single correct interpretation and no pressure to believe in a predetermined future.</p>
+                <p>Our guides use approachable language, offer questions you can make your own, and leave room for your lived experience. The reading tool is private to your browser and asks for no account or payment.</p>
+                <p class="about-note">Astro Tarot is an educational portfolio project. Its readings are for personal reflection and are not medical, legal, financial, or mental health advice.</p>
+                <a class="button button-dark" href="{% url 'reading' %}">Begin exploring ↗</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

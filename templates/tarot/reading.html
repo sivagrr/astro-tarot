@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Interactive reading{% endblock %}
+{% block content %}
+  {% block scripts %}
+    <link rel="stylesheet" href="{% static 'tarot/reading.css' %}">
+  {% endblock %}
+  <div class="tarot-draw-page">
+    <section class="page-hero reading-hero">
+      <div class="shell">
+        <span class="eyebrow dark">A MOMENT TO REFLECT</span>
+        <h1>Your reading <em>starts here.</em>
+        </h1>
+        <p>Take a breath. Choose a focus and a spread, then reveal your cards at your own pace.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="shell reading-layout">
+        <div class="reading-controls">
+          <h2>Shape your reading</h2>
+          <p>Take a breath. Bring a question to mind.</p>
+          <fieldset class="choice-set" id="focus-options">
+            <legend>Choose a focus</legend>
+            <div class="focus-grid">
+              <label>
+                <input type="radio" name="focus" value="general" checked>
+                <span>General guidance</span>
+              </label>
+              <label>
+                <input type="radio" name="focus" value="love">
+                <span>Love &amp; relationships</span>
+              </label>
+              <label>
+                <input type="radio" name="focus" value="career">
+                <span>Career</span>
+              </label>
+              <label>
+                <input type="radio" name="focus" value="yesno">
+                <span>Yes / No</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-set" id="spread-options">
+            <legend>Choose a spread</legend>
+            <div class="spread-options">
+              {% for spread in spreads %}
+                <label>
+                  <input type="radio" name="spread" value="{{ spread.id }}" {% if spread.id == 'three' %}checked{% endif %}>
+                  <span>
+                    <strong>{{ spread.name }}</strong>
+                    <small>{{ spread.subtitle }}</small>
+                  </span>
+                </label>
+              {% endfor %}
+            </div>
+          </fieldset>
+          <fieldset class="choice-set" id="yesno-options" hidden>
+            <legend>Yes / No focus</legend>
+            <div class="spread-options">
+              <label>
+                <input type="radio" name="yesno-focus" value="general" checked>
+                <span>General question</span>
+              </label>
+              <label>
+                <input type="radio" name="yesno-focus" value="love">
+                <span>Love &amp; relationships</span>
+              </label>
+              <label>
+                <input type="radio" name="yesno-focus" value="spiritual">
+                <span>Spiritual path</span>
+              </label>
+            </div>
+          </fieldset>
+          <label for="reading-question">Your question <span>(optional)</span>
+          </label>
+          <textarea id="reading-question" rows="3" maxlength="240" placeholder="What would you like to reflect on?">
+          </textarea>
+          <button type="button" class="button button-gold draw-button" id="draw-button">Shuffle &amp; draw</button>
+          <button type="button" class="draw-secondary" id="reset-button" hidden>Reshuffle spread</button>
+          <p class="privacy-note">✧ A reflective sample reading. Your question stays in this browser.</p>
+        </div>
+        <div class="reading-stage">
+          <div class="stage-heading">
+            <span class="small-label">YOUR SPACE</span>
+            <h2 id="stage-title">A little space for insight.</h2>
+            <p id="stage-description">Take a breath. Bring a question to mind.</p>
+          </div>
+          <p class="sr-only" id="reading-status" role="status" aria-live="polite">
+          </p>
+          <div class="drawn-cards" id="drawn-cards">
+            <div class="placeholder-card" aria-hidden="true">✳</div>
+          </div>
+          <section id="combined-reading" class="combined-reading" hidden aria-labelledby="combined-title">
+            <h3 id="combined-title">Your spread, together</h3>
+            <p id="combined-text">
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>{{ cards|json_script:'deck-data' }}{{ spreads|json_script:'spreads-data' }}<script src="{% static 'tarot/reading.js' %}" defer>
+  </script>
+{% endblock %}

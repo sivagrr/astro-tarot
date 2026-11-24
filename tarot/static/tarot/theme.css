@@ -1,0 +1,457 @@
+/* Astro Tarot shared palette. Layout and type remain in site.css. */
+:root {
+  --ink: #F8EFFF;
+  --deep: #0E0D13;
+  --deep2: #180C25;
+  --cream: #0E0D13;
+  --paper: #0E0D13;
+  --gold: #EFD18C;
+  --muted: #C1A9D2;
+  --line: #684574
+}
+
+html {
+  background: #0E0D13
+}
+
+body {
+  background: #0E0D13;
+  color: #F8EFFF
+}
+
+p,
+.section-heading p {
+  color: #C1A9D2
+}
+
+h1,
+h2,
+h3 {
+  color: #F8EFFF
+}
+
+em {
+  color: #EFD18C
+}
+
+a:hover {
+  color: #EFD18C
+}
+
+.site-header,
+.site-footer {
+  background: #0E0D13;
+  color: #F8EFFF;
+  border-color: #684574
+}
+
+.brand-mark,
+.brand-accent {
+  color: #EFD18C
+}
+
+.site-nav>a:not(.nav-cta) {
+  color: #F8EFFF
+}
+
+.site-nav>a:not(.nav-cta):hover,
+.site-nav>a:not(.nav-cta):focus-visible {
+  color: #EFD18C
+}
+
+.nav-cta {
+  border-color: #EFD18C;
+  color: #EFD18C;
+  border-radius: 5px
+}
+
+.nav-cta:hover {
+  background: #35203F;
+  color: #F8EFFF
+}
+
+.menu-toggle {
+  border-color: #684574;
+  color: #F8EFFF;
+  border-radius: 5px
+}
+
+.hero {
+  background: radial-gradient(circle at 78% 48%, #35203F 0, #180C25 38%, #0E0D13 75%);
+  color: #F8EFFF
+}
+
+.hero-copy>p,
+.hero-note,
+.hero-bottom {
+  color: #C1A9D2
+}
+
+.eyebrow,
+.eyebrow.dark,
+.small-label {
+  color: #EFD18C
+}
+
+.button,
+.filter-pill {
+  border-radius: 5px;
+  min-height: 44px
+}
+
+.button-gold,
+.button-dark {
+  background: #EFD18C;
+  color: #180C25
+}
+
+.button-gold:hover,
+.button-dark:hover {
+  background: #F8DDA4;
+  color: #180C25
+}
+
+.text-link,
+.text-link.light {
+  color: #DEC0F8
+}
+
+.hero-orb {
+  width: min(100%, 560px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 20px 40px #C084FC20)
+}
+
+.hero-orb .orb-rings {
+  transform-origin: 280px 280px;
+  animation: orb-turn 42s linear infinite
+}
+
+.hero-orb .orb-float {
+  animation: orb-breathe 7s ease-in-out infinite
+}
+
+@keyframes orb-turn {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes orb-breathe {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-10px)
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  .hero-orb .orb-rings,
+  .hero-orb .orb-float {
+    animation: none
+  }
+}
+
+.intro,
+.library {
+  background: #0E0D13
+}
+
+.path-card,
+.spread-card,
+.library-card,
+.zodiac-card {
+  background: #241333;
+  border: 1px solid #684574;
+  border-radius: 8px;
+  color: #F8EFFF
+}
+
+.path-tarot,
+.path-astro {
+  background: #241333
+}
+
+.path-icon,
+.path-astro .path-icon {
+  color: #C084FC
+}
+
+.path-number,
+.card-link,
+.position-list,
+.library-card-meta>span:last-child {
+  color: #DEC0F8
+}
+
+.path-card p,
+.spread-card p,
+.zodiac-card p {
+  color: #C1A9D2
+}
+
+.feature,
+.element-section,
+.quote-section {
+  background: #180C25
+}
+
+.feature-visual {
+  background: #241333;
+  border: 1px solid #684574;
+  border-radius: 8px
+}
+
+.feature-ring {
+  border-color: #EFD18C;
+  box-shadow: 0 0 0 40px #C084FC12, 0 0 0 80px #C084FC08
+}
+
+.feature-symbol,
+.feature-small,
+.quote-section span {
+  color: #EFD18C
+}
+
+.check-list li:before {
+  color: #EFD18C
+}
+
+.quote-section blockquote {
+  color: #F8EFFF
+}
+
+.quote-section cite {
+  color: #C1A9D2
+}
+
+.footer-grid p,
+.footer-grid a:not(.brand),
+.footer-bottom {
+  color: #C1A9D2
+}
+
+.footer-grid h3 {
+  color: #EFD18C
+}
+
+.footer-bottom {
+  border-color: #684574
+}
+
+.page-hero,
+.astro-hero,
+.reading-hero,
+.detail-hero {
+  background: #180C25
+}
+
+.page-hero p {
+  color: #C1A9D2
+}
+
+.library-tools label {
+  color: #F8EFFF
+}
+
+.search-row input,
+.reading-controls textarea {
+  background: #170F22;
+  border: 1px solid #684574;
+  color: #F8EFFF;
+  border-radius: 5px;
+  min-height: 44px
+}
+
+.search-row input::placeholder,
+.reading-controls textarea::placeholder {
+  color: #C1A9D2
+}
+
+.filter-pill {
+  border-color: #684574;
+  color: #DEC0F8;
+  background: transparent;
+  display: inline-flex;
+  align-items: center
+}
+
+.filter-pill.selected,
+.filter-pill:hover {
+  background: #35203F;
+  color: #F8EFFF;
+  border-color: #C084FC
+}
+
+.result-count,
+.back-link {
+  color: #C1A9D2
+}
+
+.library-card:hover,
+.path-card:hover {
+  box-shadow: 0 10px 25px #C084FC20
+}
+
+.mini-card {
+  height: auto;
+  aspect-ratio: 7/12;
+  background: #23162F;
+  border: 1px solid #684574;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+  display: block
+}
+
+.mini-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain
+}
+
+.library-card-meta strong {
+  color: #F8EFFF
+}
+
+.empty-state {
+  background: #241333;
+  border: 1px solid #684574;
+  border-radius: 8px
+}
+
+.detail-card-art {
+  height: auto;
+  aspect-ratio: 7/12;
+  max-width: 390px;
+  background: #23162F;
+  border: 1px solid #684574;
+  border-radius: 8px;
+  box-shadow: 0 18px 40px #0E0D1380;
+  padding: 0;
+  overflow: hidden;
+  display: block
+}
+
+.detail-card-art img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain
+}
+
+.keyword-chip,
+.zodiac-tags span {
+  background: #35203F;
+  color: #DEC0F8
+}
+
+.reflection-box,
+.about-note {
+  background: #21132E;
+  border-color: #C084FC;
+  color: #F8EFFF;
+  border-radius: 8px
+}
+
+.reflection-box p,
+.about-note {
+  color: #C1A9D2
+}
+
+.spread-preview span {
+  background: #251434;
+  color: #EFD18C;
+  border-color: #684574;
+  border-radius: 8px
+}
+
+.position-list {
+  border-color: #684574
+}
+
+.zodiac-symbol,
+.element-grid span {
+  color: #EFD18C
+}
+
+.about-grid p {
+  color: #C1A9D2
+}
+
+.reading-controls {
+  background: #241333;
+  border: 1px solid #684574;
+  border-radius: 8px
+}
+
+.reading-stage {
+  background: #170F22;
+  border: 1px solid #684574;
+  border-radius: 8px
+}
+
+.spread-option {
+  background: #170F22;
+  border: 1px solid #684574;
+  color: #F8EFFF;
+  border-radius: 5px;
+  min-height: 44px
+}
+
+.spread-option span,
+.privacy-note {
+  color: #C1A9D2
+}
+
+.spread-option[aria-pressed=true] {
+  background: #35203F;
+  border-color: #C084FC
+}
+
+.placeholder-card,
+.drawn-card-face {
+  background: #251434;
+  border-color: #684574;
+  border-radius: 8px;
+  color: #EFD18C
+}
+
+.drawn-card-face.revealed {
+  background: #23162F;
+  color: #F8EFFF
+}
+
+.drawn-card p {
+  color: #C1A9D2
+}
+
+.button-link {
+  color: #DEC0F8
+}
+
+:focus-visible {
+  outline: 3px solid #EFD18C;
+  outline-offset: 3px
+}
+
+@media(max-width:700px) {
+  .site-nav {
+    background: #180C25;
+    border: 1px solid #684574
+  }
+
+  .path-card,
+  .spread-card,
+  .library-card,
+  .zodiac-card {
+    border-radius: 8px
+  }
+}

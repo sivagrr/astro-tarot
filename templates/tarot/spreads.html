@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Tarot spreads{% endblock %}
+{% block content %}
+    <section class="page-hero">
+        <div class="shell">
+            <span class="eyebrow dark">WAYS TO REFLECT</span>
+            <h1>A spread for <em>every moment.</em>
+            </h1>
+            <p>Spreads give each card a place in your story. Choose the shape that fits your question.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="shell spread-grid">
+            {% for spread in spreads %}
+                <article class="spread-card">
+                    <span class="small-label">0{{ forloop.counter }} / {{ spread.subtitle }}</span>
+                    <div class="spread-preview" aria-hidden="true">
+                        {% for position in spread.positions %}
+                            <span>✳</span>
+                        {% endfor %}
+                    </div>
+                    <h2>{{ spread.name }}</h2>
+                    <p>{{ spread.description }}</p>
+                    <div class="position-list">
+                        {% for position in spread.positions %}
+                            <span>{{ forloop.counter }}. {{ position }}</span>
+                        {% endfor %}
+                    </div>
+                    <a class="text-link" href="{% url 'reading' %}?spread={{ spread.id }}">Try this spread <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tarot card library{% endblock %}
+{% block content %}
+    <section class="page-hero">
+        <div class="shell">
+            <span class="eyebrow dark">THE COMPLETE DECK</span>
+            <h1>Meet the <em>78 cards.</em>
+            </h1>
+            <p>Every card holds a doorway to reflection. Search by name or theme, or browse a suit to begin.</p>
+        </div>
+    </section>
+    <section class="section library">
+        <div class="shell">
+            <form class="library-tools" method="get" role="search">
+                <label for="card-search">Search the cards</label>
+                <div class="search-row">
+                    <input id="card-search" name="q" type="search" value="{{ query }}" placeholder="Search a card or theme…">
+                    <input type="hidden" name="group" value="{{ group }}">
+                    <button class="button button-dark" type="submit">Search</button>
+                </div>
+            </form>
+            <div class="filter-row" aria-label="Filter by suit">
+                {% for item in groups %}
+                    <a class="filter-pill {% if item == group %}selected{% endif %}" href="?group={{ item|urlencode }}{% if query %}&q={{ query|urlencode }}{% endif %}">{{ item }}</a>
+                {% endfor %}
+            </div>
+            <p class="result-count">{{ cards|length }} card{{ cards|length|pluralize }} found</p>
+            <div class="card-grid">
+                {% for card in cards %}
+                    <a class="library-card" href="{% url 'card_detail' card.slug %}">
+                        <span class="mini-card">
+                            <img src="{% static card.image %}" alt="" loading="lazy">
+                        </span>
+                        <span class="library-card-meta">
+                            <span class="small-label">{{ card.group }}</span>
+                            <strong>{{ card.name }}</strong>
+                            <span>{{ card.keyword }} <span aria-hidden="true">↗</span>
+                            </span>
+                        </span>
+                    </a>
+                {% empty %}
+                    <div class="empty-state">
+                        <span>✧</span>
+                        <h2>No cards found</h2>
+                        <p>Try another name or theme.</p>
+                        <a href="{% url 'cards' %}">View all cards</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
