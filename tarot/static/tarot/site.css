@@ -643,26 +643,6 @@ p {
   border: 1px solid #c5a36a55
 }
 
-.mini-number {
-  align-self: flex-start;
-  font-size: .7rem
-}
-
-.mini-symbol {
-  font-family: Georgia;
-  font-size: 6rem;
-  flex: 1;
-  display: grid;
-  place-items: center
-}
-
-.mini-name {
-  text-transform: uppercase;
-  font-size: .62rem;
-  letter-spacing: .12em;
-  text-align: center
-}
-
 .library-card-meta {
   display: flex;
   flex-direction: column;
@@ -722,24 +702,6 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 2rem
-}
-
-.detail-number {
-  align-self: flex-start
-}
-
-.detail-symbol {
-  font-size: 12rem;
-  flex: 1;
-  display: grid;
-  place-items: center
-}
-
-.detail-art-name {
-  text-transform: uppercase;
-  letter-spacing: .17em;
-  font-size: .76rem;
-  text-align: center
 }
 
 .detail-copy h1 {
@@ -936,37 +898,6 @@ p {
   font-size: .88rem
 }
 
-.spread-options {
-  display: grid;
-  gap: .55rem;
-  margin: 1.5rem 0 2rem
-}
-
-.spread-option {
-  text-align: left;
-  background: white;
-  border: 1px solid #dce3da;
-  padding: .85rem 1rem;
-  color: var(--ink);
-  display: flex;
-  flex-direction: column
-}
-
-.spread-option strong {
-  font-weight: 700;
-  font-size: .87rem
-}
-
-.spread-option span {
-  font-size: .75rem;
-  color: #74877e
-}
-
-.spread-option[aria-pressed=true] {
-  border: 2px solid #a98149;
-  background: #fbf7ed
-}
-
 .reading-controls label span {
   text-transform: none;
   letter-spacing: 0;
@@ -985,16 +916,6 @@ p {
 .draw-button {
   width: 100%;
   margin-top: 1rem
-}
-
-.subtle-button {
-  background: none;
-  border: none;
-  text-decoration: underline;
-  padding: 1rem;
-  display: block;
-  margin: auto;
-  color: var(--ink)
 }
 
 .privacy-note {
@@ -1023,8 +944,7 @@ p {
   margin-top: 2rem
 }
 
-.placeholder-card,
-.drawn-card-face {
+.placeholder-card {
   width: 170px;
   height: 250px;
   background: #21494d;
@@ -1050,21 +970,6 @@ p {
   margin-bottom: .7rem
 }
 
-.drawn-card-face {
-  width: 100%;
-  background: #21494d
-}
-
-.drawn-card-face.revealed {
-  background: #fffdf7;
-  color: #244649;
-  transition: background .3s
-}
-
-.drawn-card-face .card-symbol {
-  font-size: 5rem
-}
-
 .drawn-card h3 {
   font-size: 1.2rem;
   margin: .9rem 0 .3rem
@@ -1073,27 +978,6 @@ p {
 .drawn-card p {
   font-size: .75rem;
   line-height: 1.5
-}
-
-.reveal-button {
-  border: 0;
-  background: none;
-  color: var(--ink);
-  text-decoration: underline;
-  font-size: .78rem;
-  margin-top: .5rem
-}
-
-.reading-actions {
-  margin-top: 2rem
-}
-
-.button-link {
-  background: none;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  color: var(--ink)
 }
 
 :focus-visible {
@@ -1248,11 +1132,7 @@ p {
     margin: auto
   }
 
-  .detail-symbol {
-    font-size: 9rem
-  }
-
-  .reading-controls {
+.reading-controls {
     padding: 1.5rem
   }
 
@@ -1264,9 +1144,6 @@ p {
     width: 150px
   }
 
-  .drawn-card-face {
-    height: 210px
-  }
 }
 
 @media(max-width:450px) {
@@ -1299,8 +1176,4 @@ p {
     width: 100%
   }
 
-  .drawn-card-face {
-    max-width: 190px;
-    margin: auto
-  }
 }

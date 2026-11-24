@@ -398,43 +398,19 @@ a:hover {
   border-radius: 8px
 }
 
-.spread-option {
-  background: #170F22;
-  border: 1px solid #684574;
-  color: #F8EFFF;
-  border-radius: 5px;
-  min-height: 44px
-}
-
-.spread-option span,
 .privacy-note {
   color: #C1A9D2
 }
 
-.spread-option[aria-pressed=true] {
-  background: #35203F;
-  border-color: #C084FC
-}
-
-.placeholder-card,
-.drawn-card-face {
+.placeholder-card {
   background: #251434;
   border-color: #684574;
   border-radius: 8px;
   color: #EFD18C
 }
 
-.drawn-card-face.revealed {
-  background: #23162F;
-  color: #F8EFFF
-}
-
 .drawn-card p {
   color: #C1A9D2
-}
-
-.button-link {
-  color: #DEC0F8
 }
 
 :focus-visible {

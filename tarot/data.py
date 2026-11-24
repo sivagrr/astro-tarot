@@ -77,7 +77,6 @@ for number, (name, keyword, meaning) in enumerate(MAJOR):
             "keyword": keyword,
             "meaning": meaning,
             "reflection": f"Where might {keyword.lower()} be showing up in your life?",
-            "symbol": "✦",
         }
     )
 for suit, (theme, domain) in SUITS.items():
@@ -92,15 +91,12 @@ for suit, (theme, domain) in SUITS.items():
                 "keyword": theme,
                 "meaning": f"This card invites you to consider {RANK_MEANINGS[index]} in matters of {domain}.",
                 "reflection": f"What would {RANK_MEANINGS[index]} look like for you right now?",
-                "symbol": {"Wands": "♢", "Cups": "♡", "Swords": "✧", "Pentacles": "◈"}[
-                    suit
-                ],
             }
         )
 
-CARD_BY_SLUG = {card["slug"]: card for card in CARDS}
 for card in CARDS:
     card["image"] = "tarot/deck/" + card["slug"] + ".webp"
+CARD_BY_SLUG = {card["slug"]: card for card in CARDS}
 # The supplied export holds the full reading text; CARDS above provides short
 # introductions for browsing the library.
 READING_CARDS = json.loads(
@@ -108,10 +104,11 @@ READING_CARDS = json.loads(
 )
 if len(READING_CARDS) != 78 or len({card["name"] for card in READING_CARDS}) != 78:
     raise ValueError("The reading deck must contain 78 unique cards")
+major_names = {name for name, _, _ in MAJOR}
 for card in READING_CARDS:
     card["group"] = (
         "Major Arcana"
-        if card["name"] in {item[0] for item in MAJOR}
+        if card["name"] in major_names
         else card["name"].split(" of ")[-1]
     )
     card["slug"] = slugify(card["name"])
